@@ -37,6 +37,7 @@ func slideSumIncrease(input string) int {
 	for i < len(lines) {
 		j := i
 		counter := 0
+
 		for counter < 3 && j < len(lines) {
 			mapOfValues[i] += lines[j]
 			j++
