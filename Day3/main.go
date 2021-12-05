@@ -8,8 +8,8 @@ import (
 )
 
 func main() {
-	part1 := powerConsumption("input2.txt")
-	part2 := lifeSupportRating("input2.txt")
+	part1 := powerConsumption("input.txt")
+	part2 := lifeSupportRating("input.txt")
 	fmt.Printf("Power Consumption: %v \n", part1)
 	fmt.Printf("Life Support: %v \n", part2)
 }
@@ -33,12 +33,10 @@ func getRating(lines []string, lenOfBinary int, isOxygen bool) int {
 		weight := getWeightAtPosition(i, lines)
 		// remove not needed vals
 		newLines := []string{}
-
 		for _, item := range lines {
 			if weight >= 0 && item[i] == topChar {
 				newLines = append(newLines, item)
 			}
-
 			if weight < 0 && item[i] == botChar {
 				newLines = append(newLines, item)
 			}
@@ -102,8 +100,6 @@ func powerConsumption(s string) int {
 		}
 	}
 	output := gamma * epsilon
-	//outputBinaryStr := strconv.FormatInt(int64(output), 2)
-	//fmt.Println(outputBinaryStr)
 	return output
 }
 
@@ -115,8 +111,6 @@ func readInFileToIntArray(name string) []string {
 	}
 
 	lines := strings.Split(string(content), "\n")
-	for _, line := range lines {
-		output = append(output, line)
-	}
+	output = append(output, lines...)
 	return output
 }
