@@ -4,8 +4,8 @@ import "testing"
 
 func Test1(t *testing.T) {
 	const input = "test.txt"
-	rez := part1(input)
-	exp := 150
+	rez := poinstWithTwoOrMoreNoDiag(input)
+	exp := 5
 	if rez != exp {
 		t.Errorf("Expected: %v but result was %v\n", exp, rez)
 	}
@@ -13,8 +13,8 @@ func Test1(t *testing.T) {
 
 func Test2(t *testing.T) {
 	const input = "test.txt"
-	rez := part2(input)
-	exp := 900
+	rez := poinstWithTwoOrMore(input)
+	exp := 12
 	if rez != exp {
 		t.Errorf("Expected: %v but result was %v\n", exp, rez)
 	}
